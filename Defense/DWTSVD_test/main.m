@@ -17,7 +17,7 @@ subplot(1,3,3)
 imshow(wtrm);
 
 wpsnrOrig = WPSNR(orgn,wtrm);
-wpsnrRndw = WPSNR(wtrm,rndw);
-fprintf("\nWPSNR -> %5.5f\nWPSN with random -> %5.5f", wpsnrOrig,wpsnrRndw)
+wpsnrRndw = WPSNR(orgn,rndw);
+fprintf("\nWPSNR -> %5.5f\nWPSNR with random -> %5.5f", wpsnrOrig,wpsnrRndw)
 imwrite(wtrm,'watermarked_lena.png');
 imwrite(rndw,'randomwatermarked_lena.png');

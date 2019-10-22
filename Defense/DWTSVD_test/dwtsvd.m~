@@ -16,17 +16,13 @@ function img = dwtsvd(original, mark)
     v3 = WH(1:256);
     v4 = WH(257:512);
     
-    a = 0.15;
-    for i=(1:256)
-        SHL(i,i) = SHL(i,i) + a*v1(i);
-        SLH(i,i) = SLH(i,i) + a*v2(i);
-    end
+    for
     
-    %SLH(1,:) = SLH(1,:) + a*v3;
-    %SLH(2,:) = SLH(2,:) + a*v4;
+    SLH(1,:) = SLH(1,:) + v3;
+    SLH(2,:) = SLH(2,:) + v4;
     
-    %SHL(1,:) = SHL(3,:) + a*v1;
-    %SHL(2,:) = SHL(4,:) + a*v2;
+    SHL(1,:) = SHL(3,:) + v1;
+    SHL(2,:) = SHL(4,:) + v2;
     
     LH = ULH*SLH*VLH';
     HL = UHL*SHL*VHL';

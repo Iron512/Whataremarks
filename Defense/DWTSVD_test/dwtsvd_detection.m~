@@ -15,23 +15,17 @@ function [result, result_wpsnr] = dwtsvd_detection(original, watermarked, attack
     [~,WH,~] = svd(WHL);
     [~,AH,~] = svd(AHL);
 
-    extr_wtrm = zeros(512,1);
-    atck_wtrm = zeros(512,1);
-    
-    a = 0.15;
+    a = 0.15
     for i=(1:256)
-        extr_wtrm(i+256) = (WL(i,i) - OL(i,i))/a;
-        atck_wtrm(i+256) = (AL(i,i) - OL(i,i))/a;
-        
-        extr_wtrm(i) = (WH(i,i) - OH(i,i))/a;
-        atck_wtrm(i) = (AH(i,i) - OH(i,i))/a;
+        WL - OL
+        A
     end
     
-    extr_wtrm = extr_wtrm';
-    %atck_wtrm = atck_wtrm';
-    atck_wtrm = extr_wtrm;
     
-    sim = sqrt(extr_wtrm * atck_wtrm')/sqrt(atck_wtrm * atck_wtrm');
+    atck_wtrm = AS - OS;
+    atck_wtrm = (atck_wtrm(:))';
+    
+    sim = (extr_wtrm * atck_wtrm')/sqrt(atck_wtrm * atck_wtrm');
 
     fprintf("Sim -> %5.5f", sim);
 
