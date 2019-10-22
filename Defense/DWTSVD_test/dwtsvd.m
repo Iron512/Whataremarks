@@ -1,10 +1,4 @@
-
-
-function img = dwtsvd(plain, watermark)
-
-    original = imread(plain);
-    mark =  imread(watermark);
-    
+function img = dwtsvd(original, mark)
     [LL,LH,HL,HH] = dwt2(original,'haar');
     
     mark_gs = bitmark2gs(mark);
@@ -21,7 +15,7 @@ function img = dwtsvd(plain, watermark)
     
     sumMatrixWS = zeros(sizeix,sizeiy);
     sumMatrixWS(startx:startx-1+sizewx,starty:starty-1+sizewy) = WS;
-    imwrite(sumMatrixWS,'./DWTSVD_test/obtained.png');
+    imwrite(uint8(sumMatrixWS), 'obtained.png');
     
     S = S + sumMatrixWS;
     
