@@ -18,11 +18,11 @@ function result = dwtsvd_detection(original, watermarked, attacked)
     SplusAL = UOH' * AHL * VOH;
     SplusAH = UOL' * ALH * VOL;
  
-    a = 1;
-    wtrm_1 = zeros(256,1,'double');
+    a = 10;
+    x = zeros(256,1,'double');
     
     for i=(1:256)
-        wtrm_1(i) = ((SplusWL(i,i)-SOH(i,i))/a);
+        x(i) = ((SplusWL(i,i)-SOH(i,i))/a);
     end
     
     %extr_wtrmL = extr_wtrmL';
