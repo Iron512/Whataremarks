@@ -1,23 +1,25 @@
 function img = dwtsvd(original, mark)
+    
+    %first part (image splitting)
     [LL,LH,HL,HH] = dwt2(original,'haar');
     
-    mark_gs = bitmark2gs(mark);
+    [ULH,SLH,VLH] = svd(LH);
+    [UHL,SHL,VHL] = svd(HL);
     
-    [~,~,WHL,~] = dwt2(mark_gs,'haar');
+    %second part (watermark processing)
+    mark = bitmark2gs(mark);
+    mark = mark(:)';
     
-    [U,S,V] = svd(HL);
-    [~,WS,~] = svd(WHL);
+    [WL,WH] = dwt(mark,'haar');
     
-    startx = 1;
-    starty = 1;
-    [sizeix,sizeiy] = size(S);
-    [sizewx,sizewy] = size(WS);
+    %third part, watermark embedding
+    a = 30;
+    for i=(1:256)
+        SHL(i,i) = SHL(i,i) + a*WL(i);
+        SLH(i,i) = SLH(i,i) + a*WH(i);
+    end
+        
+    LH = ULH*SLH*VLH';
+    HL = UHL*SHL*VHL';
     
-    sumMatrixWS = zeros(sizeix,sizeiy);
-    sumMatrixWS(startx:startx-1+sizewx,starty:starty-1+sizewy) = WS;
-    imwrite(uint8(sumMatrixWS), 'obtained.png');
-    
-    S = S + sumMatrixWS;
-    
-    HL = U*S*V';
 img = uint8(idwt2(LL,LH,HL,HH,'haar'));
