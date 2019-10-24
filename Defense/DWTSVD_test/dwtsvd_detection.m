@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 function [result, result_wpsnr] = dwtsvd_detection(original, watermarked, attacked)
 %function result = dwtsvd_detection(original, watermarked, attacked)
     
+=======
+%function [result, result_wpsnr] = dwtsvd_detection(original, watermarked, attacked)
+
+function result = dwtsvd_detection(original, watermarked, attacked)
+>>>>>>> 9be9726780f8fe1f854ff77a3f39fa09bffd70c7
     orgn = imread(original);
     wtrm = imread(watermarked);
     atck = imread(attacked);
