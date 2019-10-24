@@ -1,4 +1,5 @@
 %function [result, result_wpsnr] = dwtsvd_detection(original, watermarked, attacked)
+
 function result = dwtsvd_detection(original, watermarked, attacked)
     orgn = imread(original);
     wtrm = imread(watermarked);
@@ -41,11 +42,11 @@ function result = dwtsvd_detection(original, watermarked, attacked)
     atck_wtrm = idwt(atck_wtrmL,atck_wtrmH,'haar');
     %atck_wtrm = extr_wtrm;
     
-    sim = extr_wtrm * atck_wtrm'/sqrt(atck_wtrm * atck_wtrm');
+    %sim = extr_wtrm * atck_wtrm'/sqrt(atck_wtrm * atck_wtrm');
    
-    %sim = extr_wtrm * atck_wtrm' / (sqrt(extr_wtrm*extr_wtrm') * sqrt(atck_wtrm*atck_wtrm'))
+    sim = extr_wtrm * atck_wtrm' / (sqrt(extr_wtrm*extr_wtrm') * sqrt(atck_wtrm*atck_wtrm'))
     
-    %fprintf("Sim -> %5.5f", sim);
+    fprintf("Sim -> %5.5f", sim);
 
     result = sim;
     %result_wpsnr = 0;
