@@ -18,10 +18,10 @@ function img = dwtsvd(original, mark)
     WSHL = zeros(256,'double');
     WSLH = zeros(256,'double');
     
-    a = 10;
+    a = 12;
     for i=(1:256)
-        WSHL(i,i) = SHL(i,i) + mod(i,10);%a*(WL(i));
-        WSLH(i,i) = SLH(i,i) + mod(i,10);%a*WH(i);
+        WSHL(i,i) = SHL(i,i) + a*(WL(i));
+        WSLH(i,i) = SLH(i,i) + a*WH(i);
     end
         
     WLH = ULH*WSLH*VLH';
