@@ -11,17 +11,17 @@ function img = dwtsvd(original, mark)
     mark = mark(:)';
     
     %[WL,WH] = dwt(mark,'haar');
-    WL = double(mark(1,1:256));
-    WH = double(mark(1,257:512));
+    WL = mark(1,1:256);
+    WH = mark(1,257:512);
     
     %third part, watermark embedding
-    WSHL = zeros(256,'double');
-    WSLH = zeros(256,'double');
+    WSHL = zeros(256);
+    WSLH = zeros(256);
     
-    a = 10;
+    a = 5;
     for i=(1:256)
-        WSHL(i,i) = SHL(i,i) + mod(i,10);%a*(WL(i));
-        WSLH(i,i) = SLH(i,i) + mod(i,10);%a*WH(i);
+        WSHL(i,i) = SHL(i,i) +0%a*WL(i);
+        WSLH(i,i) = SLH(i,i) + 10;%a*WH(i);
     end
         
     WLH = ULH*WSLH*VLH';
