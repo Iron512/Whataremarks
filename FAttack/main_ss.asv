@@ -1,0 +1,20 @@
+alpha = 0.2;
+watermark = uint8(randi([0,1],32,32));
+embed = ss_embed(alpha);
+detect = ss_detect(0, alpha, 1024);
+
+originalImage = "lena_gs.png";
+watermarkedImage = "wtm.bmp";
+
+im = imread(originalImage);
+
+watermarked = embed(im, watermark);
+imwrite(watermarked, wtm);
+
+for i=1:20
+   fw =  embed(im,  uint8(randi([0,1],32,32)));
+   [res, wps, sim] = detect(originalImage, watermarkedImage, qsave(fw));
+   disp(sim
+end
+
+

@@ -1,0 +1,13 @@
+originalImage = "lena_gs.png";
+watermarkedImage = "watermarked_lena.png";
+detectFunction = @dwtsvd_detection;
+
+[attackedImage, wpsn, attack, factor] = main_attack(originalImage,watermarkedImage, detectFunction);
+fprintf("----------------------------------------------------------------------------\nFINAL RESULT:\nBest attack: ");
+for a=attack
+   fprintf("%s, ", char(a)); 
+end
+fprintf("\nwith factors"
+fprintf("Best attack: %s - Best WPSNR found: %.2f with factor %.3f\n", char(attack{1}), wpsn, factor(1));
+
+imshow([im, watermarked, attackedImage]);

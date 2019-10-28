@@ -1,0 +1,6 @@
+function att = moderate_attack(attackFunction)
+    function rimg = attack(image, factor)
+        
+    end
+end
+
