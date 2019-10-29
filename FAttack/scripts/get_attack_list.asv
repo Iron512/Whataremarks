@@ -1,6 +1,0 @@
-function [attackFunctions, binaryPrecision, fnNumForGa] = get_attack_list(detectTime)
-attackFunctions = {crop_image(0), downscale(1), downscale(2), downscale(3), aawgn(0), awgn(1), @jpeg2};
-binaryPrecision = 0.1;
-fnNumForGa = 3;
-end
-

@@ -1,8 +1,0 @@
-function Iatt = a_jpeg2(image, factor)
-quality = (1-factor)*100;
-fn = ['jp', num2str(floor(now*100000000-floor(now*100)*1000000)),  num2str(round(quality*100)), num2str(sum(image(:))), '.jpg'];
-disp(fn);
-imwrite(uint8(image), f, 'Quality', quality);
-Iatt = imread('SSatt.jpg');
-delete('SSatt.jpg');
-
