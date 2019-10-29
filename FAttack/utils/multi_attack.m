@@ -6,7 +6,7 @@ function attackFunction = multi_attack(attackList)
             fprintf("Attacks: %d - Factors: %d\n", alen, length(factors));
             throw(MException("MATLAB:narginchk:notEnoughInputs", "Wrong number of factors"));
         end
-        image = double(original_image);        
+        image = original_image;        
         for i = 1:alen
            attack = attackList{i};
            image = attack(image, factors(i));

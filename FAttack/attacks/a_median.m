@@ -1,5 +1,5 @@
-function dsFun = a_medfilter(direction)
-function aimg = downfn(image, factor)
+function dsFun = a_median(direction)
+function [aimg, inputs] = downfn(image, factor)
     factor=factor^2;
     [width, height] = size(image);
     if mod(direction, 2) > 0 
@@ -13,7 +13,8 @@ function aimg = downfn(image, factor)
         h = 1;
     end
     %fprintf("%d - %d\n", w, h);
-    aimg = medfilt2(image,[w, h]);
+    aimg = test_median(image,w, h);
+    inputs = [w, h];
 end
 dsFun = @downfn;
 end

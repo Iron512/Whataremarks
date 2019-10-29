@@ -5,7 +5,7 @@ parpool;
 end
 fprintf("Starting attack...\n");
 startTime = now;
-exampleAttack = a_awgn(0);
+exampleAttack = @a_awgn;
 exampleAttackedImage = qsave(uint8(exampleAttack(double(imread(watermarkedImage)), 0.5)));
 detectFunction(originalImage, watermarkedImage, exampleAttackedImage);
 detectTime = evaluate_function(detectFunction, originalImage, watermarkedImage, exampleAttackedImage);

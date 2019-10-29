@@ -4,16 +4,18 @@ im = imread(originalImage);
 watermarked = imread(watermarkedImage);
 dwps = WPSNR(im, watermarked);
 
-fprintf("----------------------------------------------------------------------------\nFINAL RESULT:\nBest attack:\n");
+fprintf("----------------------------------------------------------------------------\nFINAL RESULT:\nBest attack: ");
 ima = watermarkedImage;
-for i=1:length(attack)
+for i=attack
    a = attack{i};
    [ima, inputs] = a(ima, factor(i));
-   fprintf("%s(", strrep(char(a), "a_", "test_")); 
+   fprintf("%s(", strrep(char(a{1})), ); 
    print_vector(inputs);
    fprintf(");\n");
 end
-fprintf("ATTACK WPSNR: %.3f\nDEFENSE WPSNR: %.3f\n", wpsn, dwps);
+fprintf("\nwith factors: ");
+print_vector(factor);
+fprintf("\nATTACK WPSNR: %.3f\nDEFENSE WPSNR: %.3f\n", wpsn, dwps);
 
 
 if dwps >= 66
