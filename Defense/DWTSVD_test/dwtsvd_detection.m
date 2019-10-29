@@ -1,12 +1,5 @@
-<<<<<<< HEAD
 function [result, result_wpsnr] = dwtsvd_detection(original, watermarked, attacked)
 %function result = dwtsvd_detection(original, watermarked, attacked)
-    
-=======
-%function [result, result_wpsnr] = dwtsvd_detection(original, watermarked, attacked)
-
-function result = dwtsvd_detection(original, watermarked, attacked)
->>>>>>> 9be9726780f8fe1f854ff77a3f39fa09bffd70c7
     orgn = imread(original);
     wtrm = imread(watermarked);
     atck = imread(attacked);
@@ -124,6 +117,26 @@ function result = dwtsvd_detection(original, watermarked, attacked)
     infl_atck_wtrm = zeros(1,1024);
     
     for i=(0:2:511)
+        if extr_wtrm(i+1)/2 == 0
+            infl_extr_wtrm(i*2+1) = 0;
+            infl_extr_wtrm(i*2+2) = 0;
+        else
+            if extr_wtrm(i+1)/2 == 1
+                infl_extr_wtrm(i*2+1) = 0;
+                infl_extr_wtrm(i*2+2) = 1;
+            else
+                if extr_wtrm(i+1)/2 == 2
+                    infl_extr_wtrm(i*2+1) = 1;
+                    infl_extr_wtrm(i*2+2) = 0;
+                else
+                    if extr_wtrm(i+1)/2 == 3
+                        infl_extr_wtrm(i*2+1) = 1;
+                        infl_extr_wtrm(i*2+2) = 1;
+                    end
+                end
+            end
+        end
+        
         infl_extr_wtrm(i*2+1) = extr_wtrm(i+1)/2;
         infl_extr_wtrm(i*2+2) = mod(extr_wtrm(i+1),2);
         

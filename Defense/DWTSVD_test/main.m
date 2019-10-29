@@ -3,8 +3,8 @@ mark = load('whataremarks.mat');
 mark = mark.w;
 rndm = imread('randomWatermark.png');
 
-rndw = dwtsvd(orgn, rndm/255);
 wtrm = dwtsvd(orgn, mark);
+rndw = dwtsvd(orgn, rndm/255);
 
 subplot(1,3,1)
 imshow(orgn);

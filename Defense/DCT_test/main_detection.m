@@ -1,0 +1,1 @@
+[val,val2] = detection('lena_gs.png','watermarked_51.bmp','attacked_51.bmp');
