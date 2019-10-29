@@ -5,7 +5,7 @@ watermarked = imread(watermarkedImage);
 dwps = WPSNR(im, watermarked);
 
 fprintf("----------------------------------------------------------------------------\nFINAL RESULT:\nBest attack:\n");
-ima = watermarkedImage;
+ima = watermarked;
 for i=1:length(attack)
    a = attack{i};
    [ima, inputs] = a(ima, factor(i));
@@ -32,23 +32,30 @@ else
     dpts = 0;
 end
 
-if dwps >= 53
+if wpsn >= 53
     rpts = 0;
-elseif dwps >= 50
+elseif wpsn >= 50
     rpts = 1;
-elseif dwps >= 47
+elseif wpsn >= 47
     rpts = 2;
-elseif dwps >= 44
+elseif wpsn >= 44
     rpts = 3;
-elseif dwps >= 41
+elseif wpsn >= 41
     rpts = 4;
-elseif dwps >= 38
+elseif wpsn >= 38
     rpts = 5;
 else
     rpts = 6;
 end
 points = dpts+rpts;
 fprintf("Total competition points: %d (%d quality, %d robustness)\n", points, dpts, rpts);
+imwrite(attackedImage, "attackedImage.bmp");
+fprintf("Attacked image saved to attackedImage.bmp\n");
+
+[res, wps] = detectFunction(originalImage, watermarkedImage, "attackedImage.bmp");
+if res == 1
+    frpintf("Im trolling clearly, dont trust whatever I just said :(\n");
+end
 
 
 imshow([im, watermarked, attackedImage]);

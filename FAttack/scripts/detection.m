@@ -29,7 +29,7 @@ function [result,wpsnr] = detection(original, watermarked, attacked)
     sim1 = (w * a')/sqrt(a * a');
     %sim2 = (w * w')/sqrt(w * w');
 
-    fprintf("dirty sim -> %5.5f \ndirty sim with self -> %5.5f\n",sim1,sim2);
+    fprintf("dirty sim -> %5.5f \n",sim1);
 
     if sim1 > 14 
         result = 1;
