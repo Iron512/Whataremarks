@@ -1,0 +1,37 @@
+function img = dwtlu(original, mark)
+    
+    %first part (image splitting)
+    [LL,LH,HL,HH] = dwt2(original,'haar');
+    
+    [LLH,ULH,PLH] = lu(LH);
+    %[UHL,SHL,VHL] = svd(HL);
+    
+    %second part (watermark processing)
+    %mark = bitmark2gs(mark);
+    %mark = mark(:)';
+    
+    %[WL,WH] = dwt(mark,'haar');
+    %WL = double(mark(1,1:256));
+    %WH = double(mark(1,257:512));
+    
+    %third part, watermark embedding
+    ULHW = zeros(256,'double');
+   % WSLH = zeros(256,'double');
+    
+    a = 0;
+    k=0;
+    for i=4:12
+        for j=4:68
+            k=k+1;
+            ULHW(i,j) = ULH(i,j) + a*(mark(k));
+        end
+        
+    end
+    
+    
+    LH2 = PLH\ULH*LLH;
+        
+
+    
+img = uint8(idwt2(LL,LH2,HL,HH,'haar'));
+end
