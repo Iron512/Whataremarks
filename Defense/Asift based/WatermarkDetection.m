@@ -7,7 +7,7 @@ function [result,result_wpsnr] = WatermarkDetection(oimg,wimg,aimg)
     result_wpsnr = WPSNR(wimg,aimg);
 
     arnold_strength = 200;
-    alpha = 32;
+    alpha = 22.5;
 
     [LL1,LH1,HL1,HH1] = dwt2(oimg,'Haar');
     [LL2,LH2,HL2,HH2] = dwt2(LL1,'Haar');
@@ -28,9 +28,9 @@ function [result,result_wpsnr] = WatermarkDetection(oimg,wimg,aimg)
     [U,S,V] = svd(HH4);
     
     Sww = (U'*HH4w*V);
-    Wembedded = (Sww-S)/alpha;
+    Wembedded = double(uint8((Sww-S)/alpha));
     Swa = (U'*HH4a*V);
-    Wattacked = (Swa-S)/alpha;
+    Wattacked = double(uint8((Swa-S)/alpha));
     
     %We = iarnold(We,arnold_strength);
     
@@ -41,7 +41,7 @@ function [result,result_wpsnr] = WatermarkDetection(oimg,wimg,aimg)
     
     result = 0;
     
-    if(sim_e>12.52)
+    if(sim_e>14)
         result = 1;
     else 
         result = 0;
