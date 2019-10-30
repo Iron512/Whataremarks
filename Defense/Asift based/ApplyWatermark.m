@@ -2,7 +2,7 @@ function f = ApplyWatermark(img,watermarking)
     % implementation of the algotithm described in this paper https://res.mdpi.com/d_attachment/applsci/applsci-08-00410/article_deploy/applsci-08-00410-v2.pdf
   
     arnold_strength= 40;
-    strength = 32;
+    strength = 22.5;
     
     [LL1,LH1,HL1,HH1] = dwt2(img,'Haar');
     [LL2,LH2,HL2,HH2] = dwt2(LL1,'Haar');
