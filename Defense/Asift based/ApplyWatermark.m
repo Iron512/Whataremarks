@@ -15,7 +15,7 @@ function f = ApplyWatermark(img,watermarking)
     
     %W = arnold(watermarking,arnold_strength);
     
-    SW = S + W* strength;
+    SW = S * (1+ W*strength);  
     
     [Uw,Sww,Vw] = svd(SW);
     
