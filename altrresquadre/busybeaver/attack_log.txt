@@ -1,0 +1,7 @@
+CACTI:
+test_median/downfn(1.000000, 1.000000);
+test_median/downfn(3.000000, 1.000000);
+test_awgn(0.006046, 6.000000);
+test_blur(0.613811);
+test_resize(0.640929);
+test_jpeg(98.036883);
