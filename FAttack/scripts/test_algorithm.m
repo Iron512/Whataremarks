@@ -54,7 +54,7 @@ fprintf("Attacked image saved to attackedImage.bmp\n");
 
 [res, wps] = detectFunction(originalImage, watermarkedImage, "attackedImage.bmp");
 if res == 1
-    frpintf("Im trolling clearly, dont trust whatever I just said :(\n");
+    printf("Im trolling clearly, dont trust whatever I just said :(\n");
 end
 
 
