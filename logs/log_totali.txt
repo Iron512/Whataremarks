@@ -64,8 +64,13 @@ MODD
 BUSY BEAVER
     FISH
         (WPSNR < 35, no succesful attack)
-    CACTI
-        (WPSNR < 35, no succesful attack)
+    CACTI:
+        test_median/downfn(1.000000, 1.000000);
+        test_median/downfn(3.000000, 1.000000);
+        test_awgn(0.006046, 6.000000);
+        test_blur(0.613811);
+        test_resize(0.640929);
+        test_jpeg(98.036883);
     BRIDGE 
         test_blur(1.816407);
 
@@ -163,3 +168,32 @@ VENETIINTRASFERTA
         test_sharpen/shFn(0.207419, 1.000000);
         test_sharpen/shFn(0.215299, 0.215299);
         ATTACK WPSNR: 69.951
+    
+KECCAC 
+    BRIDGE:
+        test_jpeg(43.387785);
+        test_resize(0.648636);
+        test_blur(0.318280);
+    FISH:
+        test_resize(0.602416);
+        test_jpeg(50.870561);
+        test_blur(0.169942);
+        test_awgn(0.000003, 0.000000);
+        test_median/downfn(1.000000, 1.000000);
+        test_median/downfn(1.000000, 3.000000);
+    CACTI:
+        test_resize(0.456035);
+
+DRYMARK
+    BRIDGE:
+        test_jpeg(28.780728);
+        test_blur(1.079860);
+        test_median/downfn(2.000000, 1.000000);
+    FISH:
+        test_awgn(0.000528, 1.000000);
+        test_jpeg(81.392173);
+        test_blur(0.155478);
+        test_median/downfn(1.000000, 1.000000);
+    CACTI:
+        test_jpeg(16.015625);   
+
