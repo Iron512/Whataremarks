@@ -1,0 +1,38 @@
+WINEMARK
+Best attack to cacti:
+test_blur(0.322267);
+ATTACK WPSNR: 66.731
+Best attack fish:
+test_blur(0.322267);
+ATTACK WPSNR: 67.231
+DEFENSE WPSNR: 66.311
+Best attack to bridge:
+test_blur(0.351563);
+ATTACK WPSNR: 69.838
+/////////////////////////////
+SIRA
+Best attack to fish no
+Bset attack to cacti no
+Bast attack to bridge:
+test_blur(1.081448);
+test_median/downfn(3.000000, 1.000000);
+test_resize(0.324777);
+test_median/downfn(5.000000, 5.000000);
+test_median/downfn(1.000000, 1.000000);
+test_jpeg(47.687193);
+ATTACK WPSNR: 40.021
+////////////////////////////
+LORDPRETTYWATERMARKER
+Best attack to bridge:
+test_jpeg(85.132977);
+test_resize(0.811589);
+ATTACK WPSNR: 59.185
+Best attack to fish: no noise added
+Best attack:
+test_blur(0.000001);
+Bast attack to cacti:
+test_resize(0.916166);
+test_jpeg(95.161777);
+test_blur(0.097303);
+test_sharpen/shFn(0.376164, 1.000000);
+ATTACK WPSNR: 62.688
