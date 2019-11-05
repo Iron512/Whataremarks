@@ -1,0 +1,13 @@
+CACTI
+test_jpeg(99.023438);
+ATTACK WPSNR: 70.690
+
+FISH
+test_jpeg(99.023438);
+ATTACK WPSNR: 70.808
+
+BRIDGE
+test_jpeg(96.004342);
+test_sharpen/shFn(0.207419, 1.000000);
+test_sharpen/shFn(0.215299, 0.215299);
+ATTACK WPSNR: 69.951

@@ -1,0 +1,13 @@
+FISH
+test_resize(0.875000);
+ATTACK WPSNR: 59.521
+
+BRIDGE
+test_resize(0.834180);
+test_jpeg(93.634643);
+test_median/downfn(1.000000, 1.000000);
+ATTACK WPSNR: 62.413
+
+CACTI
+test_resize(0.923453);
+ATTACK WPSNR: 61.410
