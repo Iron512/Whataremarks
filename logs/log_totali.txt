@@ -1,0 +1,165 @@
+UNEMPLOYED
+    FISH
+        test_jpeg(48.555384);
+        test_resize(0.642921);
+        test_blur(0.072938);    
+    CACTI 
+        test_resize(0.726030);
+        test_jpeg(48.446287);
+    BRIDGE
+        test_jpeg(57.405599);
+        test_resize(0.685589);
+        test_blur(0.031635);
+
+VOCSOC
+    FISH
+        test_jpeg(89.107175);
+        test_awgn(0.002593, 3.000000);
+        test_median/downfn(1.000000, 1.000000);
+        test_blur(0.666288);
+        test_resize(0.687730);
+        test_median/downfn(3.000000, 1.000000);
+    CACTI
+        test_jpeg(12.011719);
+        ATTACK WPSNR: 38.793
+        DEFENSE WPSNR: 63.071
+    BRIDGE
+        test_jpeg(13.085938);
+
+UNAMED1
+    FISH
+        test_resize(0.464916);
+        test_jpeg(30.763680);
+        test_blur(0.209650);
+        test_median/downfn(1.000000, 1.000000);
+    CACTI
+        test_resize(0.536770);
+        test_median/downfn(1.000000, 1.000000);
+        test_jpeg(44.961101);
+        test_blur(0.264911);
+    BRIDGE
+        test_jpeg(27.579008);
+        test_resize(0.431793);
+        test_median/downfn(1.000000, 1.000000);
+        test_blur(0.025410);
+
+EBU
+    FISH 
+        test_resize(0.672408);
+        test_blur(0.080991);
+    CACTI
+        test_resize(0.638255);
+    BRIDGE 
+        test_resize(0.631568);
+
+MODD
+    FISH
+        test_median/downfn(1.000000, 4.000000);
+    CACTI 
+        test_median/downfn(1.000000, 3.000000);
+        test_median/downfn(3.000000, 1.000000);
+    BRIDGE 
+        test_jpeg(13.085938);
+
+BUSY BEAVER
+    FISH
+        (WPSNR < 35, no succesful attack)
+    CACTI
+        (WPSNR < 35, no succesful attack)
+    BRIDGE 
+        test_blur(1.816407);
+
+WINEMARK
+    FISH
+        test_blur(0.322267);
+        ATTACK WPSNR: 67.231
+    CACTI
+        test_blur(0.322267);
+        ATTACK WPSNR: 66.731
+    BRIDGE
+        test_blur(0.351563);
+        ATTACK WPSNR: 69.838
+
+SIRA
+    FISH
+        (WPSNR < 35, no succesful attack)
+    CACTI
+        (WPSNR < 35, no succesful attack)
+    BRIDGE
+        test_blur(1.081448);
+        test_median/downfn(3.000000, 1.000000);
+        test_resize(0.324777);
+        test_median/downfn(5.000000, 5.000000);
+        test_median/downfn(1.000000, 1.000000);
+        test_jpeg(47.687193);
+        ATTACK WPSNR: 40.021
+
+LORDPRETTYWATERMARKER
+    FISH
+        The image was not watermarked, without attacking it we got WPSNR 99999.00
+    CACTI
+        test_resize(0.916166);
+        test_jpeg(95.161777);
+        test_blur(0.097303);
+        test_sharpen/shFn(0.376164, 1.000000);
+        ATTACK WPSNR: 62.688
+    BRIDGE
+        test_jpeg(85.132977);
+        test_resize(0.811589);
+        ATTACK WPSNR: 59.185
+
+BEERMARK
+    FISH
+        test_resize(0.875000);
+        ATTACK WPSNR: 59.521
+    CACTI
+        test_resize(0.923453);
+        ATTACK WPSNR: 61.410
+    BRIDGE
+        test_resize(0.834180);
+        test_jpeg(93.634643);
+        test_median/downfn(1.000000, 1.000000);
+        ATTACK WPSNR: 62.413
+
+ENIGMA
+    FISH
+        test_jpeg(50.059665);
+        test_blur(0.553321);
+        ATTACK WPSNR: 46.945
+    CACTI
+        test_blur(0.615235);
+        ATTACK WPSNR: 46.384
+    BRIDGE
+        test_jpeg(37.011719);
+        ATTACK WPSNR: 49.795
+
+GROUP 5
+    FISH
+        test_blur(0.220154);
+        test_resize(0.543055);
+        ATTACK WPSNR: 47.204
+    CACTI
+        test_resize(0.574230);
+        test_blur(0.072286);
+        test_median/downfn(1.000000, 1.000000);
+        test_jpeg(60.745477);
+        ATTACK WPSNR: 46.816
+    BRIDGE
+        test_resize(0.497942);
+        test_blur(0.186920);
+        test_median/downfn(1.000000, 1.000000);
+        test_jpeg(82.901821);
+        ATTACK WPSNR: 50.716
+
+VENETIINTRASFERTA
+    FISH
+        test_jpeg(99.023438);
+        ATTACK WPSNR: 70.808
+    CACTI
+        test_jpeg(99.023438);
+        ATTACK WPSNR: 70.690
+    BRIDGE
+        test_jpeg(96.004342);
+        test_sharpen/shFn(0.207419, 1.000000);
+        test_sharpen/shFn(0.215299, 0.215299);
+        ATTACK WPSNR: 69.951

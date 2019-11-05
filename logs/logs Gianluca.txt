@@ -1,22 +1,17 @@
-//// UNEMPLOYED ////
-
+UNEMPLOYED
     FISH
         test_jpeg(48.555384);
         test_resize(0.642921);
-        test_blur(0.072938);
-    
+        test_blur(0.072938);    
     CACTI 
         test_resize(0.726030);
         test_jpeg(48.446287);
-
     BRIDGE
         test_jpeg(57.405599);
         test_resize(0.685589);
         test_blur(0.031635);
 
-
-//// VOCSOC ////
-
+VOCSOC
     FISH
         test_jpeg(89.107175);
         test_awgn(0.002593, 3.000000);
@@ -24,61 +19,48 @@
         test_blur(0.666288);
         test_resize(0.687730);
         test_median/downfn(3.000000, 1.000000);
-
     CACTI
         test_jpeg(12.011719);
         ATTACK WPSNR: 38.793
         DEFENSE WPSNR: 63.071
-
     BRIDGE
         test_jpeg(13.085938);
 
-//// UNAMED1 ////
-
-
+UNAMED1
     FISH
         test_resize(0.464916);
         test_jpeg(30.763680);
         test_blur(0.209650);
         test_median/downfn(1.000000, 1.000000);
-
     CACTI
         test_resize(0.536770);
         test_median/downfn(1.000000, 1.000000);
         test_jpeg(44.961101);
         test_blur(0.264911);
-
     BRIDGE
         test_jpeg(27.579008);
         test_resize(0.431793);
         test_median/downfn(1.000000, 1.000000);
         test_blur(0.025410);
 
-//// EBU ////
-
+EBU
     FISH 
         test_resize(0.672408);
         test_blur(0.080991);
-
     CACTI
         test_resize(0.638255);
-
     BRIDGE 
         test_resize(0.631568);
 
-//// MODD ////
-
+MODD
     FISH
         test_median/downfn(1.000000, 4.000000);
-    
     CACTI 
         test_median/downfn(1.000000, 3.000000);
         test_median/downfn(3.000000, 1.000000);
-
-    bridge 
+    BRIDGE 
         test_jpeg(13.085938);
 
-//// BUSY BEAVER /////
-
+BUSY BEAVER
     BRIDGE 
         test_blur(1.816407);
