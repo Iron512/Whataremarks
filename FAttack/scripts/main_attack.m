@@ -61,7 +61,7 @@ wpsn = w;
 factor = x;
 attack = gaAttackList;
 %attackFn = multi_attack(gaAttackList);
-[~,attackedImage] = min_fn(imread(watermarkedImage), factor);
+[~,attackedImage] = min_fn(factor);
 end
 
 fprintf("Total attack time: %.1f seconds\n", (now-startTime)*100000);

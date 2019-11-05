@@ -10,7 +10,7 @@ function funcmin = minimize_function(attackList, originalImage, watermarkedImage
         
         attackedImage = attackFunction(wImg, factors);
         img = attackedImage;
-        fn = ['att', num2str(floor(now*100000000-floor(now*100)*1000000)), num2str(sum(attackedImage(:))), num2str(randi(10000)), '.bmp'];
+        fn = ['att', num2str(floor(now*100000000-floor(now*100)*1000000)), num2str(sum(attackedImage(:))), num2str(randi(10000000)), '.bmp'];
         imwrite(attackedImage, fn);
         [res, wps] = detectFunction(originalImage, watermarkedImage,fn);
         delete(fn);
