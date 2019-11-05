@@ -45,7 +45,7 @@ opts.MaxStallGenerations = 50;
 opts.MaxStallTime = 5*ga_num+6;
 opts.PopulationSize = 2*ga_num+4;
 %opts.PlotFcn = {@gaplotbestf,@gaplotstopping};
-opts.UseParallel = true;
+%opts.UseParallel = true;
 opts.MaxTime = 120;
 
 fprintf("Starting GA search with %d attacks...\n", ga_num);
